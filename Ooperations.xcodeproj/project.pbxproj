@@ -10,6 +10,12 @@
 		A731D35723FC1E9D00A9B08A /* Ooperations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A731D34D23FC1E9D00A9B08A /* Ooperations.framework */; };
 		A731D35C23FC1E9D00A9B08A /* OoperationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731D35B23FC1E9D00A9B08A /* OoperationsTests.swift */; };
 		A731D35E23FC1E9D00A9B08A /* Ooperations.h in Headers */ = {isa = PBXBuildFile; fileRef = A731D35023FC1E9D00A9B08A /* Ooperations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A731D36823FC1EB400A9B08A /* ResultOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731D36723FC1EB400A9B08A /* ResultOperation.swift */; };
+		A731D37323FC20F800A9B08A /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731D37223FC20F800A9B08A /* AnyError.swift */; };
+		A731D37823FC236500A9B08A /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731D37723FC236500A9B08A /* Atomic.swift */; };
+		A731D37A23FC284300A9B08A /* AsyncResultOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731D37923FC284300A9B08A /* AsyncResultOperation.swift */; };
+		A731D37C23FC29C200A9B08A /* ChainedResultOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731D37B23FC29C200A9B08A /* ChainedResultOperation.swift */; };
+		A731D37E23FC2DFD00A9B08A /* OperationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731D37D23FC2DFD00A9B08A /* OperationObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		A731D35623FC1E9D00A9B08A /* OoperationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OoperationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A731D35B23FC1E9D00A9B08A /* OoperationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OoperationsTests.swift; sourceTree = "<group>"; };
 		A731D35D23FC1E9D00A9B08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A731D36723FC1EB400A9B08A /* ResultOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultOperation.swift; sourceTree = "<group>"; };
+		A731D37223FC20F800A9B08A /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
+		A731D37723FC236500A9B08A /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
+		A731D37923FC284300A9B08A /* AsyncResultOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResultOperation.swift; sourceTree = "<group>"; };
+		A731D37B23FC29C200A9B08A /* ChainedResultOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainedResultOperation.swift; sourceTree = "<group>"; };
+		A731D37D23FC2DFD00A9B08A /* OperationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +83,14 @@
 		A731D34F23FC1E9D00A9B08A /* Ooperations */ = {
 			isa = PBXGroup;
 			children = (
+				A731D37623FC235C00A9B08A /* Internal */,
 				A731D35023FC1E9D00A9B08A /* Ooperations.h */,
 				A731D35123FC1E9D00A9B08A /* Info.plist */,
+				A731D36723FC1EB400A9B08A /* ResultOperation.swift */,
+				A731D37923FC284300A9B08A /* AsyncResultOperation.swift */,
+				A731D37B23FC29C200A9B08A /* ChainedResultOperation.swift */,
+				A731D37223FC20F800A9B08A /* AnyError.swift */,
+				A731D37D23FC2DFD00A9B08A /* OperationObserver.swift */,
 			);
 			path = Ooperations;
 			sourceTree = "<group>";
@@ -84,6 +102,14 @@
 				A731D35D23FC1E9D00A9B08A /* Info.plist */,
 			);
 			path = OoperationsTests;
+			sourceTree = "<group>";
+		};
+		A731D37623FC235C00A9B08A /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				A731D37723FC236500A9B08A /* Atomic.swift */,
+			);
+			path = Internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +174,7 @@
 				TargetAttributes = {
 					A731D34C23FC1E9C00A9B08A = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					A731D35523FC1E9D00A9B08A = {
 						CreatedOnToolsVersion = 11.3;
@@ -195,6 +222,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A731D37C23FC29C200A9B08A /* ChainedResultOperation.swift in Sources */,
+				A731D37823FC236500A9B08A /* Atomic.swift in Sources */,
+				A731D36823FC1EB400A9B08A /* ResultOperation.swift in Sources */,
+				A731D37323FC20F800A9B08A /* AnyError.swift in Sources */,
+				A731D37A23FC284300A9B08A /* AsyncResultOperation.swift in Sources */,
+				A731D37E23FC2DFD00A9B08A /* OperationObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +373,7 @@
 		A731D36223FC1E9D00A9B08A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -355,6 +389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.funjahmental.Ooperations;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,6 +398,7 @@
 		A731D36323FC1E9D00A9B08A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -386,6 +422,7 @@
 		A731D36523FC1E9D00A9B08A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OoperationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -403,6 +440,7 @@
 		A731D36623FC1E9D00A9B08A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OoperationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
