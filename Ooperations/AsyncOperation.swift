@@ -1,14 +1,14 @@
 //
-//  AsyncResultOperation.swift
+//  AsyncOperation.swift
 //  Ooperations
 //
-//  Created by younke on 18.02.2020.
+//  Created by younke on 20.02.2020.
 //  Copyright © 2020 funjahmental. All rights reserved.
 //
 
 import Foundation
 
-open class AsyncResultOperation<Success>: ResultOperation<Success> {
+open class AsyncOperation: Operation {
 
     override open var isAsynchronous: Bool {
         return true
@@ -37,7 +37,6 @@ open class AsyncResultOperation<Success>: ResultOperation<Success> {
     }
 
     open override func start() {
-        print("Starting")
         guard !isCancelled else {
             finish()
             return
@@ -55,13 +54,5 @@ open class AsyncResultOperation<Success>: ResultOperation<Success> {
     public final func finish() {
         isExecuting = false
         isFinished = true
-    }
-
-    // setResult
-
-    open override func setResult(_ result: Result<Success, AnyError>) {
-        super.setResult(result)
-
-        finish()
     }
 }
