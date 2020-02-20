@@ -24,8 +24,12 @@
 		A731D39923FD980500A9B08A /* Ooperations.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A731D34D23FC1E9D00A9B08A /* Ooperations.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A731D39E23FD9C6E00A9B08A /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731D39D23FD9C6E00A9B08A /* AsyncOperation.swift */; };
 		A731D3B223FE1B9000A9B08A /* SimpleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731D3B123FE1B9000A9B08A /* SimpleTests.swift */; };
-		A757CA1623FE305F00915609 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757CA1523FE305F00915609 /* ImageViewController.swift */; };
+		A757CA1623FE305F00915609 /* JustImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757CA1523FE305F00915609 /* JustImageVC.swift */; };
 		A757CA1823FE31B600915609 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757CA1723FE31B600915609 /* Color.swift */; };
+		A757CA1A23FE537A00915609 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757CA1923FE537A00915609 /* ImageFetcher.swift */; };
+		A757CA1C23FE566000915609 /* BetterImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757CA1B23FE566000915609 /* BetterImageVC.swift */; };
+		A757CA1E23FE577300915609 /* BaseImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757CA1D23FE577300915609 /* BaseImageVC.swift */; };
+		A757CA2023FE596700915609 /* ImageFetchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757CA1F23FE596700915609 /* ImageFetchOperation.swift */; };
 		A77E767B23FE22F600251FD3 /* DelayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E767A23FE22F600251FD3 /* DelayOperation.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,8 +85,12 @@
 		A731D39323FD97F800A9B08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A731D39D23FD9C6E00A9B08A /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		A731D3B123FE1B9000A9B08A /* SimpleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTests.swift; sourceTree = "<group>"; };
-		A757CA1523FE305F00915609 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		A757CA1523FE305F00915609 /* JustImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustImageVC.swift; sourceTree = "<group>"; };
 		A757CA1723FE31B600915609 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A757CA1923FE537A00915609 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		A757CA1B23FE566000915609 /* BetterImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterImageVC.swift; sourceTree = "<group>"; };
+		A757CA1D23FE577300915609 /* BaseImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageVC.swift; sourceTree = "<group>"; };
+		A757CA1F23FE596700915609 /* ImageFetchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchOperation.swift; sourceTree = "<group>"; };
 		A77E767A23FE22F600251FD3 /* DelayOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,7 +183,11 @@
 				A731D38523FD97F600A9B08A /* AppDelegate.swift */,
 				A731D38923FD97F600A9B08A /* ViewControllers.swift */,
 				A757CA1723FE31B600915609 /* Color.swift */,
-				A757CA1523FE305F00915609 /* ImageViewController.swift */,
+				A757CA1D23FE577300915609 /* BaseImageVC.swift */,
+				A757CA1523FE305F00915609 /* JustImageVC.swift */,
+				A757CA1B23FE566000915609 /* BetterImageVC.swift */,
+				A757CA1923FE537A00915609 /* ImageFetcher.swift */,
+				A757CA1F23FE596700915609 /* ImageFetchOperation.swift */,
 				A731D38B23FD97F600A9B08A /* Main.storyboard */,
 				A731D39023FD97F800A9B08A /* LaunchScreen.storyboard */,
 				A731D39323FD97F800A9B08A /* Info.plist */,
@@ -358,8 +370,12 @@
 			files = (
 				A731D38A23FD97F600A9B08A /* ViewControllers.swift in Sources */,
 				A757CA1823FE31B600915609 /* Color.swift in Sources */,
-				A757CA1623FE305F00915609 /* ImageViewController.swift in Sources */,
+				A757CA2023FE596700915609 /* ImageFetchOperation.swift in Sources */,
+				A757CA1E23FE577300915609 /* BaseImageVC.swift in Sources */,
+				A757CA1623FE305F00915609 /* JustImageVC.swift in Sources */,
 				A731D38623FD97F600A9B08A /* AppDelegate.swift in Sources */,
+				A757CA1A23FE537A00915609 /* ImageFetcher.swift in Sources */,
+				A757CA1C23FE566000915609 /* BetterImageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

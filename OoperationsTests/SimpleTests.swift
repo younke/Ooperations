@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Ooperations
 
 class SimpleTests: OperationTestCase {
 
@@ -43,11 +44,20 @@ class SimpleTests: OperationTestCase {
     }
 
     func test_op_before_after() {
-        let blockOp = BlockOperation {
+        let blockOp = DelayOperation(delay: 0.2)
+        XCTAssertFalse(blockOp.isExecuting)
+        XCTAssertFalse(blockOp.isFinished)
 
-        }
+        let exp = expectation(description: #file)
+        blockOp.completionBlock = { exp.fulfill() }
 
+        blockOp.start()
+        XCTAssertTrue(blockOp.isExecuting)
+        XCTAssertFalse(blockOp.isFinished)
 
+        waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertFalse(blockOp.isExecuting)
+        XCTAssertTrue(blockOp.isFinished)
     }
 
     func test_dependency() {
@@ -58,8 +68,7 @@ class SimpleTests: OperationTestCase {
         let op2 = BlockOperation { exp2.fulfill() }
         op2.addDependency(op1)
 
-        queue.addOperation(op2)
-        queue.addOperation(op1)
+        queue.addOperations([op1, op2], waitUntilFinished: false)
 
         wait(for: [exp1], timeout: 0.1)
         wait(for: [exp2], timeout: 0.2)

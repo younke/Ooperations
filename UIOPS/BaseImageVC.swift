@@ -1,5 +1,5 @@
 //
-//  ImageViewController.swift
+//  BaseImageVC.swift
 //  UIOPS
 //
 //  Created by younke on 20.02.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
+class BaseImageVC: UIViewController {
 
     weak var tableView: UITableView!
 
@@ -22,7 +22,7 @@ class ImageViewController: UIViewController {
             imageView.heightAnchor.constraint(equalToConstant: 100)
         ])
         imageView.contentMode = .scaleAspectFill
-        imageView.isHidden = true
+        imageView.isUserInteractionEnabled = false
         return imageView
     }()
 
@@ -69,65 +69,9 @@ class ImageViewController: UIViewController {
 
         activity.transform = .init(scaleX: 5, y: 5)
     }
-
-    let queue = DispatchQueue.global(qos: .userInitiated)
-
-    // MARK: - viewDidAppear
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        syncLoadAfter(seconds: 2)
-    }
-
-    // MARK: - SyncLoad
-
-    func syncLoadAfter(seconds: TimeInterval) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [unowned self] in
-            self.syncLoadBody()
-        }
-    }
-
-    func syncLoadBody() {
-        isLoading = true
-        defer {
-            isLoading = false
-        }
-        guard
-            let url = URL(string: "https://imgsrc.hubblesite.org/hu/db/images/hs-2006-10-a-hires_jpg.jpg"),
-            let data = try? Data(contentsOf: url),
-            let image = UIImage(data: data) else {
-                return
-        }
-        imageView.image = image
-        imageView.isHidden = false
-        view.layoutIfNeeded()
-    }
-
-    // MARK: - AsyncLoad
-
-    func asyncLoadAfter(seconds: TimeInterval) {
-        isLoading = true
-        queue.asyncAfter(deadline: .now() + seconds) {
-            guard
-                let url = URL(string: "https://imgsrc.hubblesite.org/hu/db/images/hs-2006-10-a-hires_jpg.jpg"),
-                let data = try? Data(contentsOf: url),
-                let image = UIImage(data: data) else {
-                    //
-                    return
-            }
-            DispatchQueue.main.async { [unowned self] in
-                self.isLoading = false
-                self.imageView.image = image
-                self.imageView.isHidden = false
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-
 }
 
-extension ImageViewController: UITableViewDelegate, UITableViewDataSource {
+extension BaseImageVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellID = "cell"

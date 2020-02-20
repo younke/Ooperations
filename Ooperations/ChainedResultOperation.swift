@@ -8,16 +8,16 @@
 
 import Foundation
 
-enum ChainedResultOperationError {
+public enum ChainedResultOperationError: Error {
 
     case updateInputError
 }
 
-class ChainedResultOperation<Input, Success>: ResultOperation<Success> {
+open class ChainedResultOperation<Input, Success>: ResultOperation<Success> {
 
-    var input: Input?
+    open var input: Input?
 
-    override final func start() {
+    open override func start() {
         updateInputFromDependencies()
         super.start()
     }
@@ -31,11 +31,11 @@ class ChainedResultOperation<Input, Success>: ResultOperation<Success> {
     }
 }
 
-class ChainedAsyncResultOperation<Input, Success>: AsyncResultOperation<Success> {
+open class ChainedAsyncResultOperation<Input, Success>: AsyncResultOperation<Success> {
 
-    var input: Input?
+    open var input: Input?
 
-    override final func start() {
+    open override func start() {
         updateInputFromDependencies()
         super.start()
     }

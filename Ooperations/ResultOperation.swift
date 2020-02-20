@@ -10,7 +10,7 @@ import Foundation
 
 open class ResultOperation<Success>: Operation {
 
-    var result: Result<Success, AnyError>?
+    open private(set) var result: Result<Success, AnyError>?
 
     open func setResult(_ result: Result<Success, AnyError>) {
         self.result = result
