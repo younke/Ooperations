@@ -8,20 +8,23 @@
 
 import XCTest
 
-class SimpleTests: XCTestCase {
+class SimpleTests: OperationTestCase {
 
-    var queue: OperationQueue!
     var emptyOp: Operation!
 
     override func setUp() {
-        queue = OperationQueue()
+        super.setUp()
+
         emptyOp = Operation()
     }
 
     override func tearDown() {
-        queue.cancelAllOperations()
-        queue = nil
+        super.tearDown()
+
+        emptyOp = nil
     }
+
+    // MARK: - Tests
 
     func test_block_operation() {
         let blockOp = BlockOperation { }
@@ -40,16 +43,25 @@ class SimpleTests: XCTestCase {
     }
 
     func test_op_before_after() {
+        let blockOp = BlockOperation {
+
+        }
 
 
     }
 
     func test_dependency() {
-        let exp = expectation(description: "first")
-        let exp = expectation(description: "second")
+        let exp1 = expectation(description: "first")
+        let exp2 = expectation(description: "second")
 
-        let op1 = BlockOperation { }
-        let op2 =
+        let op1 = BlockOperation { exp1.fulfill() }
+        let op2 = BlockOperation { exp2.fulfill() }
+        op2.addDependency(op1)
 
+        queue.addOperation(op2)
+        queue.addOperation(op1)
+
+        wait(for: [exp1], timeout: 0.1)
+        wait(for: [exp2], timeout: 0.2)
     }
 }

@@ -18,9 +18,11 @@ open class DelayOperation: AsyncOperation {
         self.dispatchQueue = dispatchQueue
     }
 
-
     open override func main() {
-
+        dispatchQueue.asyncAfter(deadline: .now() + delay) {
+            [weak self] in
+            self?.finish()
+        }
     }
 }
 

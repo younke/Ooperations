@@ -139,11 +139,3 @@ private extension UIViewController {
         return self
     }
 }
-
-private extension UIColor {
-
-    static var random: UIColor {
-        let rand = { CGFloat.random(in: 0...1) }
-        return UIColor(red: rand(), green: rand(), blue: rand(), alpha: 1.0)
-    }
-}

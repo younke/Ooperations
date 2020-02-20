@@ -7,9 +7,8 @@
 //
 
 import XCTest
-@testable import Ooperations
 
-class OoperationsTests: XCTestCase {
+class OperationTestCase: XCTestCase {
 
     var queue: OperationQueue!
 
@@ -20,10 +19,5 @@ class OoperationsTests: XCTestCase {
     override func tearDown() {
         queue.cancelAllOperations()
         queue = nil
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 }
